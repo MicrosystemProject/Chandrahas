@@ -74,6 +74,17 @@ public class EmployeeController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(employee);
 	}
 	
+	@GetMapping("/getEmployeeByemail")
+	public Employee getEmpByemail(@RequestParam("email") String femail){
+		
+		 Optional <Employee> employee = employeeService.findByEmail(femail);
+	        if (employee.isPresent()) {
+	            System.out.println(employee.get());
+	        } else {
+	            System.out.printf("No employee found with Name"+ femail);
+	        }
+		return employee.get();
+	}
   
 //	 @DeleteMapping("/deleteById/{id}")
 //	 public ResponseEntity< Map<String,Boolean>> deleteEmployee(@PathVariable int id){

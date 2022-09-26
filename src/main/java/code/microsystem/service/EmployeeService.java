@@ -29,6 +29,12 @@ public interface EmployeeService {
 
 
 
+
+	public Optional<Employee> findByEmail(String femail);
+
+
+
+
 	
 
 }

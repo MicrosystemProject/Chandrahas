@@ -11,5 +11,8 @@ public interface EmployeeRepositroy extends JpaRepository<Employee, Integer> {
 
 	@Query("from Employee e where e.fname=:name")
 	Optional<Employee> findByFname(String name);
+
+	@Query("from Employee e where e.email=:femail")
+	Optional<Employee> findByEmail(String femail);
 	
 }

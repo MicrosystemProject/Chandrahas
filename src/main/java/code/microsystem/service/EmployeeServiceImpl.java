@@ -79,6 +79,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 
+
+
+	@Override
+	public Optional<Employee> findByEmail(String femail) {
+		// TODO Auto-generated method stub
+		return employeeRepositroy.findByEmail(femail);
+	}
+
+
+
 	
 
 	
